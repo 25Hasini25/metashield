@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Test upload portal</title></head>
+<body style="font-family:system-ui;max-width:560px;margin:40px auto">
+<h1>Test upload portal</h1>
+<p>Load the MetaShield extension, then choose a geotagged phone photo (JPEG).</p>
+<input type="file" id="f" accept="image/*">
+<ul id="log"></ul>
+<script>
+document.getElementById('f').addEventListener('change', e => {
+  const f = e.target.files[0]; if (!f) return;
+  document.getElementById('log').insertAdjacentHTML('beforeend',
+    '<li>Site received: ' + f.name + ' (' + Math.round(f.size/1024) + ' KB)</li>');
+});
+</script></body></html>

@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "MetaShield",
+  "version": "0.1.0",
+  "description": "Pre-flight privacy firewall: warns about hidden photo metadata (GPS, device, timestamps, author) before a website upload and lets you strip it first.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["bengaluru-map.js", "content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
